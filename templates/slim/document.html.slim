@@ -71,8 +71,8 @@ html lang=(attr :lang, 'en' unless attr? :nolang)
       .slides
         - unless notitle || !has_header?
           section
-            h2=@header.title
-            p: small=author
+            h1=@header.title
+            h4=author
         =content
     script src="#{revealjsdir}/lib/js/head.min.js"
     script src="#{revealjsdir}/js/reveal.js"
