@@ -1,0 +1,119 @@
+= Active Matter
+Wendell Smith, April 28, 2015
+:date: April 28, 2015
+:source-highlighter: pygments
+:pygments-style: autumn
+:revealjs_theme: simple
+// :revealjs_width: 1280
+// :revealjs_height: 1000
+:revealjs_margin: 0.04
+:revealjsdir: http://wackywendell.github.io/reveal.js/
+:stem: latexmath
+
+== This is a test
+
+ - abc
+ - bcd
+ - cde
+ - def
+ - efg
+ - fgh
+ - ghi
+ - hij
+ - ijk
+ - jkl
+
+=== Inside Header
+
+.Example Video
+video::http://www.w3schools.com/html/mov_bbb.mp4[width=640,height=352]
+
+== Three Basic Forms
+
+.Three panes
+[cols="a,2a",grid="none",frame="none"]
+|==================================
+|
+Item 1
+
+Math: latexmath:[a=\sqrt{b}] 
+
+.2+|
+Item 2
+
+|
+Bottom Left Pane
+
+|==================================
+
+Header 2
+--------
+
+
+
+.Three panes
+[cols="a,2a"]
+|==================================
+|
+[float]
+Top Left Pane
+~~~~~~~~~~~~~
+Consul *necessitatibus* per id.
+
+Consul *necessitatibus* per id.
+
+.2+|
+[float]
+Right Pane
+~~~~~~~~~~
+Consul *necessitatibus* per id.
+
+-----------------------------------
+Consul *necessitatibus* per id.
+-----------------------------------
+
+.Code filter example
+[source,python]
+-----------------------------------
+def sub_word(mo):
+    word = mo.group('word')
+    if word in keywords[language]:
+        return quote + word + quote
+    else:
+        return word
+-----------------------------------
+
+- Lorem ipsum dolor sit amet,
+  consectetuer adipiscing elit.
+  * Fusce euismod commodo velit.
+- Nulla porttitor vulputate libero.
+  . Fusce euismod commodo velit.
+  . Vivamus fringilla mi eu lacus.
+
+|
+[float]
+Bottom Left Pane
+~~~~~~~~~~~~~~~~
+Consul *necessitatibus* per id,
+consetetur, eu pro everti postulant
+homero verear ea mea, qui.
+
+Consul *necessitatibus* per id,
+consetetur, eu pro everti postulant
+homero verear ea mea, qui.
+
+- Lorem ipsum dolor sit amet,
+  consectetuer adipiscing elit.
+  * Fusce euismod commodo velit.
+  * Qui in magna commodo, est labitur
+    dolorum an. Est ne magna primis
+    adolescens. Sit munere ponderum
+    dignissim et. Minim luptatum et vel.
+  * Vivamus fringilla mi eu lacus.
+  * Donec eget arcu bibendum nunc
+    consequat lobortis.
+- Nulla porttitor vulputate libero.
+  . Fusce euismod commodo velit.
+  . Vivamus fringilla mi eu lacus.
+
+|==================================
