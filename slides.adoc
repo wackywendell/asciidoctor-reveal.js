@@ -8,6 +8,7 @@ Wendell Smith, April 28, 2015
 // :revealjs_height: 1000
 :revealjs_margin: 0.04
 :revealjsdir: http://wackywendell.github.io/reveal.js/
+// :revealjsdir: https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.0.0/
 :stem: latexmath
 
 == This is a test
