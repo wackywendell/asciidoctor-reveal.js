@@ -1,0 +1,175 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="author" content="Wendell Smith, April 28, 2015"><title>Active Matter</title><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport"><link href="http://wackywendell.github.io/reveal.js//css/reveal.css" rel="stylesheet"><link rel="stylesheet" href="http://wackywendell.github.io/reveal.js//css/theme/simple.css" id="theme"><script type="text/x-mathjax-config">MathJax.Hub.Config({
+tex2jax: {
+  inlineMath: [["\\(", "\\)"]],
+  displayMath: [["\\[", "\\]"]],
+  ignoreClass: "nostem|nolatexmath"
+},
+asciimath2jax: {
+  delimiters: [["\\$", "\\$"]],
+  ignoreClass: "nostem|noasciimath"
+},
+TeX: { equationNumbers: { autoNumber: "none" } }
+});</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.4.0/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script><style>.listingblock .pygments .hll { background-color: #ffffcc }
+.listingblock .pygments  { background: #ffffff; }
+.listingblock .pygments .tok-c { color: #aaaaaa; font-style: italic } /* Comment */
+.listingblock .pygments .tok-err { color: #FF0000; background-color: #FFAAAA } /* Error */
+.listingblock .pygments .tok-k { color: #0000aa } /* Keyword */
+.listingblock .pygments .tok-cm { color: #aaaaaa; font-style: italic } /* Comment.Multiline */
+.listingblock .pygments .tok-cp { color: #4c8317 } /* Comment.Preproc */
+.listingblock .pygments .tok-c1 { color: #aaaaaa; font-style: italic } /* Comment.Single */
+.listingblock .pygments .tok-cs { color: #0000aa; font-style: italic } /* Comment.Special */
+.listingblock .pygments .tok-gd { color: #aa0000 } /* Generic.Deleted */
+.listingblock .pygments .tok-ge { font-style: italic } /* Generic.Emph */
+.listingblock .pygments .tok-gr { color: #aa0000 } /* Generic.Error */
+.listingblock .pygments .tok-gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.listingblock .pygments .tok-gi { color: #00aa00 } /* Generic.Inserted */
+.listingblock .pygments .tok-go { color: #888888 } /* Generic.Output */
+.listingblock .pygments .tok-gp { color: #555555 } /* Generic.Prompt */
+.listingblock .pygments .tok-gs { font-weight: bold } /* Generic.Strong */
+.listingblock .pygments .tok-gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.listingblock .pygments .tok-gt { color: #aa0000 } /* Generic.Traceback */
+.listingblock .pygments .tok-kc { color: #0000aa } /* Keyword.Constant */
+.listingblock .pygments .tok-kd { color: #0000aa } /* Keyword.Declaration */
+.listingblock .pygments .tok-kn { color: #0000aa } /* Keyword.Namespace */
+.listingblock .pygments .tok-kp { color: #0000aa } /* Keyword.Pseudo */
+.listingblock .pygments .tok-kr { color: #0000aa } /* Keyword.Reserved */
+.listingblock .pygments .tok-kt { color: #00aaaa } /* Keyword.Type */
+.listingblock .pygments .tok-m { color: #009999 } /* Literal.Number */
+.listingblock .pygments .tok-s { color: #aa5500 } /* Literal.String */
+.listingblock .pygments .tok-na { color: #1e90ff } /* Name.Attribute */
+.listingblock .pygments .tok-nb { color: #00aaaa } /* Name.Builtin */
+.listingblock .pygments .tok-nc { color: #00aa00; text-decoration: underline } /* Name.Class */
+.listingblock .pygments .tok-no { color: #aa0000 } /* Name.Constant */
+.listingblock .pygments .tok-nd { color: #888888 } /* Name.Decorator */
+.listingblock .pygments .tok-ni { color: #880000; font-weight: bold } /* Name.Entity */
+.listingblock .pygments .tok-nf { color: #00aa00 } /* Name.Function */
+.listingblock .pygments .tok-nn { color: #00aaaa; text-decoration: underline } /* Name.Namespace */
+.listingblock .pygments .tok-nt { color: #1e90ff; font-weight: bold } /* Name.Tag */
+.listingblock .pygments .tok-nv { color: #aa0000 } /* Name.Variable */
+.listingblock .pygments .tok-ow { color: #0000aa } /* Operator.Word */
+.listingblock .pygments .tok-w { color: #bbbbbb } /* Text.Whitespace */
+.listingblock .pygments .tok-mb { color: #009999 } /* Literal.Number.Bin */
+.listingblock .pygments .tok-mf { color: #009999 } /* Literal.Number.Float */
+.listingblock .pygments .tok-mh { color: #009999 } /* Literal.Number.Hex */
+.listingblock .pygments .tok-mi { color: #009999 } /* Literal.Number.Integer */
+.listingblock .pygments .tok-mo { color: #009999 } /* Literal.Number.Oct */
+.listingblock .pygments .tok-sb { color: #aa5500 } /* Literal.String.Backtick */
+.listingblock .pygments .tok-sc { color: #aa5500 } /* Literal.String.Char */
+.listingblock .pygments .tok-sd { color: #aa5500 } /* Literal.String.Doc */
+.listingblock .pygments .tok-s2 { color: #aa5500 } /* Literal.String.Double */
+.listingblock .pygments .tok-se { color: #aa5500 } /* Literal.String.Escape */
+.listingblock .pygments .tok-sh { color: #aa5500 } /* Literal.String.Heredoc */
+.listingblock .pygments .tok-si { color: #aa5500 } /* Literal.String.Interpol */
+.listingblock .pygments .tok-sx { color: #aa5500 } /* Literal.String.Other */
+.listingblock .pygments .tok-sr { color: #009999 } /* Literal.String.Regex */
+.listingblock .pygments .tok-s1 { color: #aa5500 } /* Literal.String.Single */
+.listingblock .pygments .tok-ss { color: #0000aa } /* Literal.String.Symbol */
+.listingblock .pygments .tok-bp { color: #00aaaa } /* Name.Builtin.Pseudo */
+.listingblock .pygments .tok-vc { color: #aa0000 } /* Name.Variable.Class */
+.listingblock .pygments .tok-vg { color: #aa0000 } /* Name.Variable.Global */
+.listingblock .pygments .tok-vi { color: #aa0000 } /* Name.Variable.Instance */
+.listingblock .pygments .tok-il { color: #009999 } /* Literal.Number.Integer.Long */</style><link href="http://wackywendell.github.io/reveal.js//lib/css/zenburn.css" rel="stylesheet"><script type="text/javascript">document.write( '<link rel="stylesheet" href="http://wackywendell.github.io/reveal.js//css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );</script></head><body><div class="reveal"><div class="slides"><section><h1>Active Matter</h1><h4>Wendell Smith, April 28, 2015</h4></section><section><section id="_this_is_a_test"><h2>This is a test</h2><div class="ulist"><ul><li><p>abc</p></li><li><p>bcd</p></li><li><p>cde</p></li><li><p>def</p></li><li><p>efg</p></li><li><p>fgh</p></li><li><p>ghi</p></li><li><p>hij</p></li><li><p>ijk</p></li><li><p>jkl</p></li></ul></div></section><section id="_inside_header"><h2>Inside Header</h2><div class="videoblock"><div class="title">Example Video</div><div class="content"><video src="http://www.w3schools.com/html/mov_bbb.mp4" width="640" height="352" controls>Your browser does not support the video tag.</video></div></div></section></section>
+<section id="_three_basic_forms"><h2>Three Basic Forms</h2><table class="tableblock frame-none grid-none" style="width:100%"><caption class="title">Table 1. Three panes</caption><colgroup><col style="width:33%"><col style="width:66%"></colgroup><tbody><tr><td class="tableblock halign-left valign-top"><div><div class="paragraph"><p>Item 1</p></div>
+<div class="paragraph"><p>Math: \(a=\sqrt{b}\)</p></div></div></td><td class="tableblock halign-left valign-top" rowspan="2"><div><div class="paragraph"><p>Item 2</p></div></div></td></tr><tr><td class="tableblock halign-left valign-top"><div><div class="paragraph"><p>Bottom Left Pane</p></div></div></td></tr></tbody></table></section>
+<section id="_header_2"><h2>Header 2</h2><table class="tableblock frame-all grid-all" style="width:100%"><caption class="title">Table 2. Three panes</caption><colgroup><col style="width:33%"><col style="width:66%"></colgroup><tbody><tr><td class="tableblock halign-left valign-top"><div><h3 id="_top_left_pane" class="float">Top Left Pane</h3>
+<div class="paragraph"><p>Consul <strong>necessitatibus</strong> per id.</p></div>
+<div class="paragraph"><p>Consul <strong>necessitatibus</strong> per id.</p></div></div></td><td class="tableblock halign-left valign-top" rowspan="2"><div><h3 id="_right_pane" class="float">Right Pane</h3>
+<div class="paragraph"><p>Consul <strong>necessitatibus</strong> per id.</p></div>
+<div class="listingblock"><div class="content"><pre class="pygments highlight"><code>Consul *necessitatibus* per id.</code></pre></div></div>
+<div class="listingblock"><div class="title">Code filter example</div><div class="content"><pre class="pygments highlight"><code class="python language-python"><span class="tok-k">def</span> <span class="tok-nf">sub_word</span><span class="tok-p">(</span><span class="tok-n">mo</span><span class="tok-p">):</span>
+    <span class="tok-n">word</span> <span class="tok-o">=</span> <span class="tok-n">mo</span><span class="tok-o">.</span><span class="tok-n">group</span><span class="tok-p">(</span><span class="tok-s">&#39;word&#39;</span><span class="tok-p">)</span>
+    <span class="tok-k">if</span> <span class="tok-n">word</span> <span class="tok-ow">in</span> <span class="tok-n">keywords</span><span class="tok-p">[</span><span class="tok-n">language</span><span class="tok-p">]:</span>
+        <span class="tok-k">return</span> <span class="tok-n">quote</span> <span class="tok-o">+</span> <span class="tok-n">word</span> <span class="tok-o">+</span> <span class="tok-n">quote</span>
+    <span class="tok-k">else</span><span class="tok-p">:</span>
+        <span class="tok-k">return</span> <span class="tok-n">word</span></code></pre></div></div>
+<div class="ulist"><ul><li><p>Lorem ipsum dolor sit amet,
+consectetuer adipiscing elit.</p><div class="ulist"><ul><li><p>Fusce euismod commodo velit.</p></li></ul></div></li><li><p>Nulla porttitor vulputate libero.</p><div class="olist arabic"><ol class="arabic"><li><p>Fusce euismod commodo velit.</p></li><li><p>Vivamus fringilla mi eu lacus.</p></li></ol></div></li></ul></div></div></td></tr><tr><td class="tableblock halign-left valign-top"><div><h3 id="_bottom_left_pane" class="float">Bottom Left Pane</h3>
+<div class="paragraph"><p>Consul <strong>necessitatibus</strong> per id,
+consetetur, eu pro everti postulant
+homero verear ea mea, qui.</p></div>
+<div class="paragraph"><p>Consul <strong>necessitatibus</strong> per id,
+consetetur, eu pro everti postulant
+homero verear ea mea, qui.</p></div>
+<div class="ulist"><ul><li><p>Lorem ipsum dolor sit amet,
+consectetuer adipiscing elit.</p><div class="ulist"><ul><li><p>Fusce euismod commodo velit.</p></li><li><p>Qui in magna commodo, est labitur
+dolorum an. Est ne magna primis
+adolescens. Sit munere ponderum
+dignissim et. Minim luptatum et vel.</p></li><li><p>Vivamus fringilla mi eu lacus.</p></li><li><p>Donec eget arcu bibendum nunc
+consequat lobortis.</p></li></ul></div></li><li><p>Nulla porttitor vulputate libero.</p><div class="olist arabic"><ol class="arabic"><li><p>Fusce euismod commodo velit.</p></li><li><p>Vivamus fringilla mi eu lacus.</p></li></ol></div></li></ul></div></div></td></tr></tbody></table></section></div></div><script src="http://wackywendell.github.io/reveal.js//lib/js/head.min.js"></script><script src="http://wackywendell.github.io/reveal.js//js/reveal.js"></script><script type="text/javascript">// See https://github.com/hakimel/reveal.js#configuration for a full list of configuration options
+Reveal.initialize({
+  // Display controls in the bottom right corner
+  controls: true,
+  // Display a presentation progress bar
+  progress: true,
+  // Display the page number of the current slide
+  slideNumber: false,
+  // Push each slide change to the browser history
+  history: false,
+  // Enable keyboard shortcuts for navigation
+  keyboard: true,
+  // Enable the slide overview mode
+  overview: true,
+  // Vertical centering of slides
+  center: true,
+  // Enables touch navigation on devices with touch input
+  touch: true,
+  // Loop the presentation
+  loop: false,
+  // Change the presentation direction to be RTL
+  rtl: false,
+  // Turns fragments on and off globally
+  fragments: true,
+  // Flags if the presentation is running in an embedded mode,
+  // i.e. contained within a limited portion of the screen
+  embedded: false,
+  // Number of milliseconds between automatically proceeding to the
+  // next slide, disabled when set to 0, this value can be overwritten
+  // by using a data-autoslide attribute on your slides
+  autoSlide: 0,
+  // Stop auto-sliding after user input
+  autoSlideStoppable: true,
+  // Enable slide navigation via mouse wheel
+  mouseWheel: false,
+  // Hides the address bar on mobile devices
+  hideAddressBar: true,
+  // Opens links in an iframe preview overlay
+  previewLinks: false,
+  // Theme (e.g., beige, black, blood, league, moon, night, serif, simple, sky, solarized, white)
+  // NOTE setting the theme in the config no longer works in reveal.js 3.x
+  //theme: Reveal.getQueryHash().theme || 'simple',
+  // Transition style (e.g., none, fade, slide, convex, concave, zoom)
+  transition: Reveal.getQueryHash().transition || 'slide',
+  // Transition speed (e.g., default, fast, slow)
+  transitionSpeed: 'default',
+  // Transition style for full page slide backgrounds (e.g., none, fade, slide, convex, concave, zoom)
+  backgroundTransition: 'fade',
+  // Number of slides away from the current that are visible
+  viewDistance: 3,
+  // Parallax background image (e.g., "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'")
+  parallaxBackgroundImage: '',
+  // Parallax background size in CSS syntax (e.g., "2100px 900px")
+  parallaxBackgroundSize: '',
+
+  // The "normal" size of the presentation, aspect ratio will be preserved
+  // when the presentation is scaled to fit different resolutions. Can be
+  // specified using percentage units.
+  width: 960,
+  height: 700,
+
+  // Factor of the display size that should remain empty around the content
+  margin: 0.04,
+
+  // Bounds for smallest/largest possible scale to apply to content
+  minScale: 0.2,
+  maxScale: 1.5,
+
+  // Optional libraries used to extend on reveal.js
+  dependencies: [
+      { src: 'http://wackywendell.github.io/reveal.js//lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'http://wackywendell.github.io/reveal.js//plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'http://wackywendell.github.io/reveal.js//plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      
+      { src: 'http://wackywendell.github.io/reveal.js//plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+      { src: 'http://wackywendell.github.io/reveal.js//plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+  ]
+});</script></body></html>
