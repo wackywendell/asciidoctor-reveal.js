@@ -1,4 +1,4 @@
-= Active Matter
+= Example Slides
 Wendell Smith, April 28, 2015
 :date: April 28, 2015
 :source-highlighter: pygments
@@ -29,7 +29,30 @@ Wendell Smith, April 28, 2015
 .Example Video
 video::http://www.w3schools.com/html/mov_bbb.mp4[width=640,height=352]
 
-== Three Basic Forms
+== Table
+
+:valign: top
+[cols="2*"]
+|===
+a|
+[source,groovy]
+----
+myTask {
+    mySources file( 'path/foobar' )
+    mySources new File( 'path2/foobar' )
+    mySources 'file3', 'file4'
+    mySources { "lazy evaluate file name later on" }
+}
+----
+a|
+* Allow ability to:
+* Use strings and other objects convertible to `File`
+* Append lists
+* Evaluate as late as possible
+* Reset default values
+|===
+
+== Some Tables
 
 .Three panes
 [cols="a,2a",grid="none",frame="none"]
