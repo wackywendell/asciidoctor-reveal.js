@@ -72,7 +72,10 @@ html lang=(attr :lang, 'en' unless attr? :nolang)
         - unless notitle || !has_header?
           section
             h1=@header.title
-            h4=author
+            - preamble = @document.find_by context: :preamble
+            - unless preamble.nil? or preamble.length == 0
+              =preamble.pop.content
+            p: small=author
         =content
     script src="#{revealjsdir}/lib/js/head.min.js"
     script src="#{revealjsdir}/js/reveal.js"
