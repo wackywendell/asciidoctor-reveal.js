@@ -60,6 +60,7 @@ html lang=(attr :lang, 'en' unless attr? :nolang)
       link href=(attr 'highlightjs-theme') rel="stylesheet"
     - else
       link href="#{revealjsdir}/lib/css/zenburn.css" rel="stylesheet"
+    style=Helpers.default_styles()
     / If the query includes 'print-pdf', use the PDF print sheet
     javascript:
       document.write( '<link rel="stylesheet" href="#{revealjsdir}/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
@@ -75,7 +76,7 @@ html lang=(attr :lang, 'en' unless attr? :nolang)
             - preamble = @document.find_by context: :preamble
             - unless preamble.nil? or preamble.length == 0
               =preamble.pop.content
-            p: small=author
+            h4(class="author")=author
         =content
     script src="#{revealjsdir}/lib/js/head.min.js"
     script src="#{revealjsdir}/js/reveal.js"
