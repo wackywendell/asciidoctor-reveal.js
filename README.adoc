@@ -193,6 +193,11 @@ Default is built-in [path]_lib/css/zenburn.css_.
 |Overrides reveal.js directory.
 Example: ../reveal.js
 
+|:customcss:
+|<file\|URL>
+|Add some custom CSS, which loads after the theme.
+Example: custom.css
+
 |:revealjs_controls:
 |*true*, false
 |Display controls in the bottom right corner.
